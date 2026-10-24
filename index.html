@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yiudara Adventures — Explore. Discover. Belong.</title>
+<meta name="description" content="Yiudara Adventures plans tours and unforgettable journeys from Nairobi, Kenya to Greece, Thailand, Hong Kong, Kenya and beyond.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="#home" class="brand" aria-label="Yiudara Adventures home">
+      <img class="brand-icon" src="assets/logo-icon.png" alt="">
+      <span class="brand-text">
+        <span class="brand-name">Yiudara</span>
+        <span class="brand-sub">Adventures</span>
+        <span class="brand-tag">Explore &bull; Discover &bull; Belong</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main">
+      <a href="#home" class="active">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="tours.html">Tours</a>
+      <a href="#about">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#plan" class="icon-btn" aria-label="Search trips">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </a>
+      <a href="#plan" class="btn btn-navy">Plan Your Trip
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21 3L3 10.5l6 2.5 2.5 6L21 3zm-9.2 9.4l-1.5-.6 6-5.4-4.5 6z"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide hero-bg is-active"></div>
+    <div class="hero-slide img-greece"></div>
+    <div class="hero-slide img-thailand"></div>
+    <div class="hero-slide img-kenya"></div>
+    <div class="hero-slide img-hongkong"></div>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Welcome to Yiudara Adventures</p>
+    <h1>More Than Just a Trip &mdash; It&rsquo;s a Story Waiting for <em class="rotator" data-words="You|Your Family|Your Friends|Your Partner">You</em></h1>
+    <p class="hero-lead">Discover breathtaking destinations, experience new cultures and create memories that last a lifetime.</p>
+    <a href="tours.html" class="btn btn-blue">Explore Our Tours
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21 3L3 10.5l6 2.5 2.5 6L21 3zm-9.2 9.4l-1.5-.6 6-5.4-4.5 6z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SEARCH BAR ============ -->
+<section class="search-wrap" id="plan">
+  <form class="search-card" id="tripForm" novalidate>
+    <label class="field">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="#1769c9"><path d="M21 3L3 10.5l6 2.5 2.5 6L21 3z"/></svg>
+      <span class="field-body">
+        <span class="field-label">Destination</span>
+        <select id="destination" name="destination" required>
+          <option value="">Where do you want to go?</option>
+          <option>Greece</option>
+          <option>Thailand</option>
+          <option>Hong Kong</option>
+          <option>Kenya</option>
+          <option>Somewhere else</option>
+        </select>
+      </span>
+    </label>
+    <label class="field">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#1769c9" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+      <span class="field-body">
+        <span class="field-label">Travel Dates</span>
+        <input type="date" id="dates" name="dates" aria-label="Travel date">
+      </span>
+    </label>
+    <label class="field">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#1769c9" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5.5a3.2 3.2 0 010 6M18.5 14.5c1.9.8 3 2.6 3 5.5"/></svg>
+      <span class="field-body">
+        <span class="field-label">Travelers</span>
+        <select id="travelers" name="travelers">
+          <option>1 Adult</option>
+          <option selected>2 Adults</option>
+          <option>3 Adults</option>
+          <option>4 Adults</option>
+          <option>5+ Adults</option>
+          <option>Family / Group</option>
+        </select>
+      </span>
+    </label>
+    <button type="submit" class="btn btn-search">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      Search
+    </button>
+  </form>
+  <p class="form-note" id="formNote" role="status"></p>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features" aria-label="Why choose us">
+  <div class="features-inner">
+    <div class="feature reveal">
+      <svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="#1769c9" stroke-width="2"><circle cx="20" cy="20" r="15"/><ellipse cx="20" cy="20" rx="6.5" ry="15"/><path d="M5 20h30M7.5 12h25M7.5 28h25"/></svg>
+      <h3>Curated Destinations</h3>
+      <p>Handpicked for unforgettable experiences</p>
+    </div>
+    <div class="feature reveal">
+      <svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="#1769c9" stroke-width="2" stroke-linejoin="round"><path d="M20 4l13 5v10c0 8.5-5.6 14.4-13 17C12.6 33.4 7 27.5 7 19V9z"/><path d="M14 20l4.5 4.5L27 15" stroke-linecap="round"/></svg>
+      <h3>Safe &amp; Reliable</h3>
+      <p>Your safety is our priority</p>
+    </div>
+    <div class="feature reveal">
+      <svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="#1769c9" stroke-width="2" stroke-linecap="round"><path d="M7 22v-3a13 13 0 0126 0v3"/><rect x="4.5" y="21" width="6.5" height="10" rx="2.5"/><rect x="29" y="21" width="6.5" height="10" rx="2.5"/><path d="M33 31c0 3-3 4.5-8 4.5"/></svg>
+      <h3>Expert Support</h3>
+      <p>We&rsquo;re with you, every step of the way</p>
+    </div>
+    <div class="feature reveal">
+      <svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="#1769c9" stroke-width="2" stroke-linejoin="round"><path d="M20 4l4.7 9.6 10.6 1.5-7.7 7.4 1.9 10.5L20 28l-9.5 5 1.9-10.5-7.7-7.4 10.6-1.5z"/><circle cx="20" cy="19" r="3.2"/></svg>
+      <h3>Tailor-Made Experiences</h3>
+      <p>Personalised trips for your unique style</p>
+    </div>
+    <div class="feature reveal">
+      <svg viewBox="0 0 40 40" width="38" height="38" fill="none" stroke="#1769c9" stroke-width="2" stroke-linejoin="round"><path d="M20 34S5 25.2 5 14.8C5 9.8 8.8 6.5 13 6.5c3 0 5.4 1.6 7 4.2 1.6-2.6 4-4.2 7-4.2 4.2 0 8 3.3 8 8.3C35 25.2 20 34 20 34z"/></svg>
+      <h3>Meaningful Travel</h3>
+      <p>Explore. Discover. Belong.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESTINATIONS ============ -->
+<section class="destinations" id="destinations">
+  <div class="destinations-inner">
+    <div class="dest-intro reveal">
+      <p class="kicker">Popular Destinations</p>
+      <h2>Explore the World&rsquo;s Most Beautiful Places</h2>
+      <p>From exotic beaches to vibrant cities, discover destinations that inspire, relax and awaken your spirit.</p>
+      <a href="destinations.html" class="btn btn-outline">View All Destinations
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="dest-grid">
+      <a href="#plan" class="dest-card reveal" data-dest="Greece">
+        <div class="dest-img img-greece" role="img" aria-label="Greek island with white buildings and blue domes"></div>
+        <div class="dest-meta"><div><strong>Greece</strong><span>Island Dreams</span></div><i class="arrow" aria-hidden="true">&rarr;</i></div>
+      </a>
+      <a href="#plan" class="dest-card reveal" data-dest="Thailand">
+        <div class="dest-img img-thailand" role="img" aria-label="Turquoise water and limestone islands in Thailand"></div>
+        <div class="dest-meta"><div><strong>Thailand</strong><span>Tropical Paradise</span></div><i class="arrow" aria-hidden="true">&rarr;</i></div>
+      </a>
+      <a href="#plan" class="dest-card reveal" data-dest="Hong Kong">
+        <div class="dest-img img-hongkong" role="img" aria-label="Hong Kong skyline over the harbour"></div>
+        <div class="dest-meta"><div><strong>Hong Kong</strong><span>City &amp; Culture</span></div><i class="arrow" aria-hidden="true">&rarr;</i></div>
+      </a>
+      <a href="#plan" class="dest-card reveal" data-dest="Kenya">
+        <div class="dest-img img-kenya" role="img" aria-label="Elephant on the Kenyan savannah"></div>
+        <div class="dest-meta"><div><strong>Kenya</strong><span>Safari Adventures</span></div><i class="arrow" aria-hidden="true">&rarr;</i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why" id="about">
+  <div class="why-visual img-trek" role="img" aria-label="Hikers on a mountain trail">
+    <p class="why-script">Different<br>Destinations.<br>Same Feeling&hellip;<span>BELONG</span></p>
+  </div>
+  <div class="why-copy reveal">
+    <h2>Why Travel With Yiudara Adventures?</h2>
+    <p>We believe travel has the power to transform. That&rsquo;s why we go beyond ordinary trips to create meaningful, personalised experiences that connect you to people, places and cultures.</p>
+    <ul class="checks">
+      <li>Unique and authentic experiences</li>
+      <li>Local expertise</li>
+      <li>Competitive prices</li>
+      <li>Flexible itineraries</li>
+      <li>24/7 support</li>
+      <li>Your dreams, our mission</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FEATURED TOUR ============ -->
+<section class="featured img-coast" aria-label="Featured tour">
+  <div class="featured-inner reveal">
+    <div>
+      <p class="kicker light">Featured Tour</p>
+      <h2>Discover Kenya&rsquo;s Best Safari &amp; Beach Experience</h2>
+      <p>Wildlife, adventure and coastal luxury &mdash; all in one unforgettable journey.</p>
+    </div>
+    <a href="kenya-safari.html" class="btn btn-ghost">View This Tour
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21 3L3 10.5l6 2.5 2.5 6L21 3z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ STORIES ============ -->
+<section class="stories" id="stories">
+  <div class="stories-inner">
+    <div class="stories-title reveal">
+      <h2>Traveler&rsquo;s Stories</h2>
+      <p>Real people. Unforgettable experiences.</p>
+    </div>
+    <div class="stories-track" id="storiesTrack">
+      <article class="story">
+        <span class="avatar a1" aria-hidden="true">SW</span>
+        <div>
+          <blockquote>&ldquo;Yiudara Adventures made our Kenya trip effortless and magical. Every detail was perfect!&rdquo;</blockquote>
+          <cite><b>Sarah W.</b> &nbsp;|&nbsp; Nairobi</cite>
+        </div>
+      </article>
+      <article class="story">
+        <span class="avatar a2" aria-hidden="true">JK</span>
+        <div>
+          <blockquote>&ldquo;Professional, friendly and truly passionate about travel. I&rsquo;ll definitely book again!&rdquo;</blockquote>
+          <cite><b>James K.</b> &nbsp;|&nbsp; London</cite>
+        </div>
+      </article>
+      <article class="story">
+        <span class="avatar a3" aria-hidden="true">AT</span>
+        <div>
+          <blockquote>&ldquo;From start to finish, the experience was amazing. The team really cares about their clients.&rdquo;</blockquote>
+          <cite><b>Amina T.</b> &nbsp;|&nbsp; Dubai</cite>
+        </div>
+      </article>
+    </div>
+    <div class="slider-dots" id="storyDots" hidden></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <p class="kicker">Good to Know</p>
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item reveal">
+      <summary>How do I book a trip?</summary>
+      <p>Choose a destination in the search box above, or tap the WhatsApp button, and tell us your dates and group size. We&rsquo;ll send you a tailored itinerary and quote, and confirm your booking once you&rsquo;re happy with it.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Can you customise a tour for me?</summary>
+      <p>Yes &mdash; every trip we plan is tailor-made. Tell us your budget, interests and travel style and we&rsquo;ll build the itinerary around you.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Do you help with visas and travel documents?</summary>
+      <p>We&rsquo;ll let you know what documents your destination requires and guide you through the process before you travel.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Do you organise group and family trips?</summary>
+      <p>Absolutely. We plan trips for couples, families, friends and larger groups, including corporate and celebration travel.</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>How can I pay?</summary>
+      <p>Payment options and deposit details are shared with your quote. Get in touch on WhatsApp or by email if you have any questions.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a href="index.html" class="brand brand-light" aria-label="Yiudara Adventures home">
+        <img class="brand-icon" src="assets/logo-icon-light.png" alt="">
+        <span class="brand-text">
+          <span class="brand-name">Yiudara</span>
+          <span class="brand-sub">Adventures</span>
+          <span class="brand-tag">Explore &bull; Discover &bull; Belong</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="tours.html">Tours</a>
+      <a href="index.html#about">About Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#faq">FAQ</a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Contact Us</h4>
+      <a href="tel:+254704456164" class="with-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.25c1.1.37 2.3.57 3.6.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.3.2 2.5.57 3.6a1 1 0 01-.25 1z"/></svg>
+        +254 704 456 164</a>
+      <a href="mailto:info@yiudaraadventures.com" class="with-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.5 7v.1L12 12.4 19.5 7.1V7z"/></svg>
+        info@yiudaraadventures.com</a>
+      <a href="https://wa.me/254704456164" data-wa="I have a question about a trip." target="_blank" rel="noopener" class="with-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.5a9.5 9.5 0 00-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1012 2.5zm4.6 13.1c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.8-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.6-.3h.5c.1 0 .4 0 .5.4l.7 1.7c.1.1.1.3 0 .4l-.3.5-.3.4c-.1.1-.2.3-.1.5.2.3.7 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.2.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.6.8c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>
+        WhatsApp us</a>
+      <span class="with-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+        Nairobi, Kenya</span>
+    </div>
+
+    <div class="foot-col foot-join">
+      <h4>Join Our Journey</h4>
+      <p>Get travel inspiration, exclusive deals and updates.</p>
+      <form class="subscribe" id="subscribeForm" novalidate>
+        <input type="email" id="subEmail" name="email" placeholder="Your email address" aria-label="Your email address" required>
+        <button type="submit" class="btn btn-blue btn-sm">Subscribe</button>
+      </form>
+      <p class="form-note light" id="subNote" role="status"></p>
+    </div>
+
+    <div class="foot-social">
+      <div class="socials" aria-label="Social media">
+        <a data-social="facebook" target="_blank" rel="noopener" aria-label="Facebook" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg></a>
+        <a data-social="instagram" target="_blank" rel="noopener" aria-label="Instagram" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a data-social="tiktok" target="_blank" rel="noopener" aria-label="TikTok" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16.6 3c.3 2.4 1.7 3.9 4 4.1v3a7 7 0 01-4-1.3v6.3a6 6 0 11-6-6c.3 0 .6 0 .9.1v3.2a3 3 0 102.1 2.9V3z"/></svg></a>
+        <a data-social="youtube" target="_blank" rel="noopener" aria-label="YouTube" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+        <a data-social="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.5 9h3.6v11H4.5zM6.3 3.5a2.1 2.1 0 110 4.2 2.1 2.1 0 010-4.2zM10 9h3.4v1.5c.5-.9 1.7-1.8 3.5-1.8 3.7 0 4.4 2.4 4.4 5.6V20h-3.6v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20H10z"/></svg></a>
+      </div>
+      <p class="foot-script">Explore. Discover. Belong.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>&copy; 2026 Yiudara Adventures. All rights reserved.</span>
+    <span><a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms &amp; Conditions</a></span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/254704456164" data-wa="I'd like to plan a trip." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M12 2.5a9.5 9.5 0 00-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1012 2.5zm4.6 13.1c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.8-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.6-.3h.5c.1 0 .4 0 .5.4l.7 1.7c.1.1.1.3 0 .4l-.3.5-.3.4c-.1.1-.2.3-.1.5.2.3.7 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.2.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.6.8c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>
+</a>
+<a class="to-top" href="#top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

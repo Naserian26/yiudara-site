@@ -45,7 +45,7 @@ function setMenu(open) {
 toggle.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
-window.addEventListener('resize', () => { if (window.innerWidth > 980) setMenu(false); });
+window.addEventListener('resize', () => { if (window.innerWidth > 1100) setMenu(false); });
 
 // ---------- Header shadow + back-to-top button on scroll ----------
 const header = document.querySelector('.site-header');
@@ -216,6 +216,7 @@ if (tripForm) {
     const text = `I'd like a quote for ${destination}. Travel date: ${when}. Travelers: ${travelers}.`;
 
     formNote.textContent = 'Opening WhatsApp so you can send your request…';
+    document.dispatchEvent(new CustomEvent('trip-enquiry', { detail: { text } })); // auth.js saves it to My Trips
     window.open(waLink(text), '_blank', 'noopener');
   });
 }

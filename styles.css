@@ -574,3 +574,62 @@ button:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
 @media (max-width:640px){
   .auth-card{padding:24px 20px 22px}
 }
+
+/* =========================================================
+   Offers (fliers) and admin dashboard
+   ========================================================= */
+.offers{padding:56px 24px 60px;background:#fff}
+.offers .section-head{margin-bottom:26px}
+.offer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.offer-card{display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(10,34,96,.1)}
+.offer-img{display:block;border:0;padding:0;background:var(--mist);cursor:zoom-in}
+.offer-img img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .4s}
+.offer-img:hover img{transform:scale(1.03)}
+.offer-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.offer-body h3{font-family:var(--serif);font-size:1.2rem;color:var(--navy-800)}
+.offer-body p{font-size:.88rem;color:var(--muted)}
+.offer-body .offer-until{color:#c0392b;font-weight:600;font-size:.8rem}
+.offer-body .btn{margin-top:auto;align-self:flex-start}
+
+.lightbox{border:0;padding:0;background:transparent;max-width:min(92vw,900px);max-height:92vh;overflow:visible}
+.lightbox::backdrop{background:rgba(4,14,40,.85)}
+.lightbox img{max-width:100%;max-height:88vh;border-radius:10px;margin:0 auto}
+.lightbox-close{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--navy-800);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+
+.card-price{font-weight:700;color:var(--navy-800)!important;font-size:.95rem!important}
+.account-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+.admin-gate{text-align:center}
+.admin-gate .btn{width:100%;margin-top:6px}
+.admin-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.admin-top h1{font-family:var(--serif);font-size:1.9rem;color:var(--navy-800)}
+.admin-tabs{max-width:460px}
+.admin-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.admin-form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:.95rem;resize:vertical}
+.admin-form textarea:focus{border-color:var(--blue-600);outline:none}
+.admin-form input[type="file"]{width:100%;font-size:.85rem}
+.admin-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field-hint{font-size:.78rem;color:var(--muted);margin:-8px 0 12px}
+.admin-preview{max-height:220px;border-radius:10px;margin-bottom:14px;border:1px solid var(--line)}
+.admin-form-actions{display:flex;gap:10px;flex-wrap:wrap}
+.import-box{background:var(--mist);border-radius:12px;padding:16px;margin-bottom:16px}
+.import-box p{font-size:.88rem;color:var(--ink);margin-bottom:10px}
+.admin-list li{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.admin-list li:first-child{border-top:0}
+.admin-list img{flex:none;width:64px;height:64px;object-fit:cover;border-radius:8px;background:var(--mist)}
+.admin-item-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.admin-item-text strong{color:var(--navy-800);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.admin-item-text span{font-size:.8rem;color:var(--muted)}
+.admin-item-actions{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.link-btn.danger{color:#c0392b}
+.badge{align-self:flex-start;font-size:.7rem!important;font-weight:700;padding:2px 8px;border-radius:999px}
+.badge.live{background:#e3f7ea;color:#1e7a3c!important}
+.badge.expired{background:#f3f3f3;color:#888!important}
+
+@media (max-width:980px){
+  .admin-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .admin-row{grid-template-columns:1fr}
+  .offers{padding:44px 18px}
+}

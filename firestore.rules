@@ -1,12 +1,43 @@
 rules_version = '2';
 
-// Each customer can only read and write their own data:
-//   users/{uid}/favourites/{destination}
-//   users/{uid}/enquiries/{id}
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    // Admins: add a document in the "admins" collection whose ID is the admin's
+    // Google email (lowercase). Only Google-verified sign-ins count.
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && exists(/databases/$(database)/documents/admins/$(request.auth.token.email.lower()));
+    }
+
+    // uploaded photos are stored inside the document, so keep them web-sized
+    function imageOk() {
+      return !('image' in request.resource.data)
+        || (request.resource.data.image is string && request.resource.data.image.size() < 800000);
+    }
+
+    // Each customer can only read and write their own data:
+    //   users/{uid}/favourites/{destination}
+    //   users/{uid}/enquiries/{id}
     match /users/{uid}/{document=**} {
       allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Tour packages and fliers: everyone can view, only admins can change
+    match /packages/{id} {
+      allow read: if true;
+      allow write: if isAdmin() && (request.method == 'delete' || imageOk());
+    }
+    match /fliers/{id} {
+      allow read: if true;
+      allow write: if isAdmin() && (request.method == 'delete' || imageOk());
+    }
+
+    // Admin list: a person may check their own entry; it is edited only in the Firebase console
+    match /admins/{email} {
+      allow read: if request.auth != null && request.auth.token.email.lower() == email;
+      allow write: if false;
     }
   }
 }

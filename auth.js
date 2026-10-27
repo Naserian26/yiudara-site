@@ -2,9 +2,8 @@
 //  Customer accounts: Firebase Authentication + Firestore
 //  Setup: paste your project's settings into firebase-config.js
 // =========================================================
-import { FIREBASE_CONFIG } from './firebase-config.js';
+import { enabled, A, F, auth, db, isAdmin } from './firebase.js';
 
-const SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
 const params = new URLSearchParams(location.search);
 const loginForm = document.getElementById('authForm');
 const accountMain = document.getElementById('accountMain');
@@ -31,7 +30,7 @@ function nextPage() {
 }
 const thisPage = () => location.pathname.split('/').pop() || 'index.html';
 
-if (FIREBASE_CONFIG.apiKey) {
+if (enabled) {
   start();
 } else {
   // accounts not switched on yet: login links stay hidden, the account pages explain why
@@ -42,16 +41,7 @@ if (FIREBASE_CONFIG.apiKey) {
   if (loading) loading.textContent = 'Customer accounts are not switched on yet.';
 }
 
-async function start() {
-  const [{ initializeApp }, A, F] = await Promise.all([
-    import(SDK + 'firebase-app.js'),
-    import(SDK + 'firebase-auth.js'),
-    import(SDK + 'firebase-firestore.js')
-  ]);
-  const app = initializeApp(FIREBASE_CONFIG);
-  const auth = A.getAuth(app);
-  const db = F.getFirestore(app);
-
+function start() {
   let user = null;
   let busy = false;        // a login form is mid-submit; it handles its own redirect
   const favs = new Set();
@@ -98,7 +88,11 @@ async function start() {
     catch (err) { console.warn(err); }
   }
   document.addEventListener('trip-enquiry', e => saveEnquiry(e.detail.text));
-  document.querySelectorAll('[data-enquiry]').forEach(a => a.addEventListener('click', () => saveEnquiry(a.dataset.wa)));
+  // delegated, so buttons added later (e.g. packages loaded by content.js) are covered too
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-enquiry]');
+    if (a) saveEnquiry(a.dataset.wa);
+  });
 
   // ---------- React to login / logout ----------
   A.onAuthStateChanged(auth, async u => {
@@ -226,6 +220,7 @@ async function start() {
 
     document.getElementById('acctLoading').hidden = true;
     accountMain.hidden = false;
+    isAdmin(user).then(ok => { document.getElementById('adminLink').hidden = !ok; });
   }
 
   function renderFavs() {

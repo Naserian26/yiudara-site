@@ -155,6 +155,17 @@
   </div>
 </section>
 
+<!-- ============ OFFERS (fliers added in admin.html) ============ -->
+<section class="offers" id="offers" hidden>
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker">Special Offers</p>
+      <h2>Current Deals &amp; Packages</h2>
+    </div>
+    <div class="offer-grid" id="offerGrid"></div>
+  </div>
+</section>
+
 <!-- ============ DESTINATIONS ============ -->
 <section class="destinations" id="destinations">
   <div class="destinations-inner">
@@ -361,6 +372,12 @@
 </a>
 
 <script src="script.js"></script>
+<dialog class="lightbox" id="lightbox" aria-label="Flier">
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <img alt="">
+</dialog>
+
 <script type="module" src="auth.js"></script>
+<script type="module" src="content.js"></script>
 </body>
 </html>

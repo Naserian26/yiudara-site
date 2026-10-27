@@ -81,7 +81,10 @@
           <p class="empty" id="enqEmpty" hidden>No trip requests yet. <a href="index.html#plan">Plan a trip</a> or ask for a quote on any tour &mdash; requests you send while logged in appear here.</p>
         </div>
       </div>
-      <button type="button" class="btn btn-outline sign-out" id="signOutBtn">Log Out</button>
+      <div class="account-actions">
+        <a href="admin.html" class="btn btn-navy" id="adminLink" hidden>Open Admin Dashboard</a>
+        <button type="button" class="btn btn-outline" id="signOutBtn">Log Out</button>
+      </div>
     </div>
   </div>
 </section>
@@ -163,6 +166,12 @@
 </a>
 
 <script src="script.js"></script>
+<dialog class="lightbox" id="lightbox" aria-label="Flier">
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <img alt="">
+</dialog>
+
 <script type="module" src="auth.js"></script>
+<script type="module" src="content.js"></script>
 </body>
 </html>
